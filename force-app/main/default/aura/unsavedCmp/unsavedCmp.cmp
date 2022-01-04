@@ -1,0 +1,20 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+
+    <aura:attribute name="firstname" type="String" />
+    <aura:attribute name="lastname" type="String" />
+    <aura:handler name="change" value="{!v.firstname}" action="{!c.valueChanged}"/>
+    <aura:handler name="change" value="{!v.lastname}" action="{!c.valueChanged}"/>
+    <lightning:unsavedChanges aura:id="unsaved"
+                onsave="{!c.handleSave}"
+                ondiscard="{!c. handleDiscard}" />
+
+    <lightning:card variant="narrow" title="Unsaved Example">
+        <div class="slds-p-around_medium">
+            <lightning:input type="text" label="First Name" value="{!v.firstname}"  />
+            <lightning:input type="text" label="Last Name" value="{!v.lastname}"/>
+        </div>
+        <div class="slds-p-around_medium">
+            <lightning:button variant="brand" label="Save" title="Save" onclick="{! c.save }" />
+        </div>
+    </lightning:card>
+</aura:component>

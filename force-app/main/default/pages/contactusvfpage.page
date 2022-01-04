@@ -1,0 +1,7 @@
+<apex:page >
+    <h1 style="font-size:50px;font-color:blue">
+        Contact Us<br></br><br></br>
+    Email Address: Test@gmail.com<br></br><br></br>
+        Phone Number: 9811112222<br></br>
+    </h1>
+</apex:page>

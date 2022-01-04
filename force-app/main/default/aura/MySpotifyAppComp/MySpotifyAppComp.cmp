@@ -1,0 +1,40 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global">          
+  
+    <div class="header" style="height:55px">    
+      <img src="https://i.pinimg.com/736x/a3/c1/36/a3c13683adbc0bedb52f3fc1d5192cc1.jpg" style="position:absolute; top:0; left:0; width:90px; height:90px"/>&nbsp;
+      <img src="https://martech.org/wp-content/uploads/2017/09/spotify-logo-1920x1080.jpg" style="position:absolute;top:0;right:700px;width:300px;height:90px"/>
+        <a href="https://www.instagram.com/spotify/" target="_blank"><img src="https://i.pinimg.com/736x/21/d6/7f/21d67f1d6b3be5bb2e39395311c77fc6.jpg" style="position:absolute;top:0;right:0px;width:100px;height:90px;"/></a>
+        <a href="https://www.facebook.com/spotifyusa/?brand_redir=6243987495" target="_blank"><img src="https://consideringapple.com/wp-content/uploads/2021/01/Facebook-app-icon.png" style="position:absolute; top:0;right:90px;height:100px; width:100px;"/></a>
+        <a href="https://twitter.com/Spotify?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><img src="https://consideringapple.com/wp-content/uploads/2021/01/Twitter-neon-app-icon-1.png" style="position:absolute; top:0;right:180px;height:100px; width:100px;"/></a>
+    </div>
+    
+    <div class="middle" style="height:1000px;">   
+        <h1 style="text-align:left;font-size:45px;color:black;font-weight:bolder;font-style:oblique;">HEADPHONE ON WORLD OFF... </h1>
+        <div style="position:absolute;width:400px;margin:bottom:-494px;">
+         <div onkeyup="{! c.handleKeyUp }">
+        <lightning:input
+            aura:id="enter-search"
+            name="enter-search"
+            type="search"/></div><br></br>
+       <div style="position:absolute;margin-left:10px;">
+       <lightning:button variant="success" label="Search" title="Brand action" onclick="{! c.handleClick }" />
+       </div><br></br><br></br>
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-labelledby="element-with-table-label other-element-with-table-label">
+     <thead>
+      <tr class="slds-line-title_caps">
+      <th colspan="2" style="text-align:center;">
+        <div class="slds-truncate" title="Policy Name">Search Result</div>
+      </th>
+      </tr>
+      </thead>
+            </table>
+            </div>
+        </div><br></br>
+    <div class="footer" style="height:40px">  
+        <img src="https://martech.org/wp-content/uploads/2017/09/spotify-logo-1920x1080.jpg" style="position:absolute;bottom:0;left:0px;width:300px;height:90px"/>
+        <h1 style="position:absolute; top:0;right:250px;height:100px; width:100px;text-align:right;font-size:25px;color:white;font-weight:bolder;font-style:oblique;"><a href="https://www.spotify.com/us/download/windows/" target="_blank">DOWNLOAD</a></h1>
+        <h1 style="position:absolute;top:0;right:30px;width:150px;text-align:right;font-size:25px;color:white;font-weight:bolder;font-style:oblique;"><a href="https://support.spotify.com/us/?_ga=2.92906397.1023047421.1628881046-871581680.1628614385" target="_blank">SUPPORT</a></h1>
+        <h1 style="position:absolute;top:0;right:400px;width:150px;text-align:right;font-size:25px;color:white;font-weight:bolder;font-style:oblique;"><a href="https://www.spotify.com/us/about-us/contact/" target="_blank">ABOUT</a></h1> 	
+       
+               </div>         
+    </aura:component>

@@ -1,0 +1,8 @@
+<apex:page controller="actionpolExample">
+    <apex:form >
+        <apex:pageBlock >
+        <apex:outputLabel style="font-size:50px;font-color:Red;font-weight:bold;" value="watch the counter: {!count}" id="counter"/>
+        <apex:actionPoller action="{!incrementcount}" rerender="counter" interval="10"/>
+            </apex:pageBlock>
+    </apex:form>
+</apex:page>

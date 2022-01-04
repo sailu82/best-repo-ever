@@ -1,0 +1,47 @@
+<aura:component controller="accountFormController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+<aura:attribute name="accountInfo" type="Customer__c" default="{'sobjectType': 'Customer__c'}"/>
+     <aura:attribute name="AccountItrt" type="Customer__c[]"/>    
+    <div class="slds" style="background-color:lightyellow;">          
+            <div class="slds-col slds-size_6-of-12  slds-m-bottom--small">
+                <div class="slds-form-element">
+                   <label class="slds-form-element__label">Customer Name</label>
+                   <div class="slds-form-element__controller"><ui:inputText aura:id="Name1" value="{!v.accountInfo.Name__c}" class="slds-input" placeholder=""/></div>
+                </div>    
+            </div>               
+           <div class="slds-grid slds-wrap"> 
+               <div class="slds-col slds-size_6-of-12  slds-m-bottom--small">
+                 <div class="slds-form-element"> 
+                        <label class="slds-form-element__label">Phone Number</label>
+                        <div class="slds-form-element__controller">
+                            <ui:inputText aura:id="pn1" value="{!v.accountInfo.Phone_Number__c}" class="slds-input" placeholder=""/>
+                         </div>
+                  </div> 
+              </div> 
+           </div>              
+              <div class="slds-grid slds-wrap"> 
+               <div class="slds-col slds-size_6-of-12  slds-m-bottom--small">
+                 <div class="slds-form-element"> 
+                        <label class="slds-form-element__label">Email Address</label>
+                        <div class="slds-form-element__controller">
+                            <ui:inputText aura:id="Ar1" value="{!v.accountInfo.Email_Address__c}" class="slds-input" placeholder=""/>
+                         </div>
+                  </div> 
+              </div> 
+           </div>         
+         <div class="slds-grid slds-wrap"> 
+               <div class="slds-col slds-size_6-of-12  slds-m-bottom--small">
+                 <div class="slds-form-element"> 
+                        <label class="slds-form-element__label">Aadahr Number</label>
+                        <div class="slds-form-element__controller">
+                            <ui:inputText aura:id="site1" value="{!v.accountInfo.Aadhar_Number__c}" class="slds-input" placeholder=""/>
+                         </div>
+                  </div> 
+              </div> 
+           </div>        
+        <div class="slds-text-align--center slds-m-top--medium">
+            <button class="slds-button slds-button--brand" onclick="{!c.submitAccountInfo}">Submit</button>
+        </div>
+    
+<br/><br/>
+         </div>		
+</aura:component>

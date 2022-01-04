@@ -1,0 +1,10 @@
+<apex:page controller="rerendercontroller">
+    <apex:form >
+        <apex:pageBlock >
+        <apex:commandButton value="Reload the lower page block" action="{!showblockmethod}" rerender="pgId"/>      
+        </apex:pageBlock>
+  <apex:pageBlock id="pgId">
+      <b>Output Text : </b> <apex:outputText value="{!outputstring}"/>        
+        </apex:pageBlock>    
+    </apex:form>
+</apex:page>

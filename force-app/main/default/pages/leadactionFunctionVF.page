@@ -1,0 +1,31 @@
+<apex:page controller="leadcls1" id="pg1">
+    <script>
+    function ValidateInput(){
+        var ldrating = document.getElementById('pg1:frm1:pb:actb1:rating').value;
+        var email = document.getElementById('pg1:frm1:pb:actb1:em').value;
+       
+        if(ldrating == 'Hot' && (email ==''))
+            {
+                alert('please fill the Email Address');
+                }
+        else{
+            callsave();
+            }
+        }           
+        </script>   
+    <apex:form id="frm1">
+        <apex:actionFunction name="callsave" action="{!savelead}"/>
+  <apex:pageBlock title="Lead Page" id="pb" >      
+  <apex:pageBlockSection title="Lead Information" id="actb1" >
+  <apex:inputField value="{!leadObj.Company}"/>
+  <apex:inputField value="{!leadObj.Rating}" id="rating"/>
+  <apex:inputField value="{!leadObj.Phone}"/>
+      <apex:inputField value="{!leadObj.LastName}"/>
+  <apex:inputField value="{!leadObj.Email}" id="em"/>  
+  </apex:pageBlockSection> 
+  <apex:pageBlockButtons location="bottom">
+  <apex:commandButton value="Save" onclick="ValidateInput();return false;"/> 
+  </apex:pageBlockButtons> 
+  </apex:pageBlock>  
+    </apex:form>
+</apex:page>

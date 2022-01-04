@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="HelloConditionalRendering" icon-name="custom:custom14">
+        <div class="slds-m-around_medium">
+                    <lightning-input class="inp" type="text" label="Enter Name" name="input1"></lightning-input>
+                    <lightning-input class="inp" type="text" label="Enter Age" name="input2"></lightning-input>
+                    <br>
+                            <lightning-button label="Click" onclick={handleClick} variant="brand"></lightning-button>
+                        </div>  
+                        Hello {name}!   <br>
+                       Your age {age}       
+                
+    </lightning-card>
+</template>

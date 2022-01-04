@@ -1,0 +1,12 @@
+<template>
+    <div style="width: auto;">
+        <lightning-card title="Person List">
+          <ul class="slds-has-dividers_around-space slds-p-around_medium">
+              <template for:each={persons} for:item="person">  
+                 <li key={person.id} class="slds-item">{person.name} </li>
+              </template>
+             
+          </ul>  
+        </lightning-card>
+    </div>
+</template>

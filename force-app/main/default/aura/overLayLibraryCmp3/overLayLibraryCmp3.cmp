@@ -1,0 +1,10 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <lightning:overlayLibrary aura:id="overlayLib" />
+    <div aura:id="overlayLibBody" class="slds-align_absolute-center">
+        {#v.body}  
+    </div> 
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_5-of-12"/>
+        <lightning:button name="ok" label="OK" variant="brand" onclick="{!c.handleOK}" class="slds-m-top_small slds-m-left_medium"/>
+    </div>
+</aura:component>

@@ -1,0 +1,26 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable">
+    <aura:attribute name="reloadForm" type="boolean" default="true" />
+    <lightning:notificationsLibrary aura:id="notifLib"/>
+    
+    <div class="slds-m-around_xx-large">
+        <lightning:recordEditForm objectApiName="Account"
+                                  aura:id="accForm"
+                                  onload="{!c.handleOnLoad}"
+                                  onsubmit="{!c.handleOnSubmit}"
+                                  onsuccess="{!c.handleOnSuccess}"
+                                  onerror="{!c.handleOnError}">
+            <lightning:messages />
+            <aura:if isTrue="{!v.reloadForm}">
+                <lightning:inputField fieldName="Name"/>
+                <lightning:inputField fieldName="AccountNumber"/>
+                <lightning:inputField fieldName="Industry"/>
+                <lightning:inputField fieldName="Phone" />
+                <lightning:inputField fieldName="Website" />
+                <aura:set attribute="else">
+                    Saving...
+                </aura:set>
+            </aura:if>
+            <lightning:button variant="brand" type="submit" name="save" label="Save" />
+        </lightning:recordEditForm>
+    </div>
+</aura:component>

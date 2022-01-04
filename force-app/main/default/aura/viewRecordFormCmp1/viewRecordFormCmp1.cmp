@@ -1,0 +1,14 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId">
+    <!--lightningRecFormComp-->
+    <aura:attribute name="recordId" type="String" default="0034x00000hXCerAAG"/>
+    <aura:attribute name="myContact" type="List" default="[Name,Email]" />
+     <lightning:recordForm 
+         recordId="{!v.recordId}" 
+         objectApiName="Contact" 
+         layoutType="Compact" 
+         fields="{!v.myContact}"
+         columns="1"
+         mode="view"
+         onsubmit="{!c.handleSubmit}" />
+
+</aura:component>

@@ -1,0 +1,4 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <lightning:overlayLibrary aura:id="overlayLib"/>
+    <lightning:button name="Click me" label="Click me" variant="brand" onclick="{!c.fireOverlay}" class="slds-m-top_small slds-m-left_medium"/>
+</aura:component>

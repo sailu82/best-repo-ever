@@ -1,0 +1,29 @@
+<apex:page controller="actionsupportcls1">
+    <apex:form >
+    <apex:pageBlock >
+       <apex:pageBlockSection >
+           <apex:pageBlockSectionItem >
+           <apex:outputLabel value="Select An Account"/>
+           <apex:selectList value="{!selectedAcc}" size="1">
+               <apex:selectOptions value="{!actName}"/>
+               <apex:actionSupport event="onchange" action="{!retrieveRec}" rerender="pb" status="loadRecords"></apex:actionSupport> />
+                </apex:selectList>
+               </apex:pageBlockSectionItem>       
+        </apex:pageBlockSection> 
+        </apex:pageBlock>
+        <apex:pageBlock title="Account Details" id="pb">
+            <apex:actionStatus id="loadRecords">
+                <apex:facet name="start">
+                    <apex:image value="{!$Resource.Loading}" style="width:230px;height:110px;" />
+                </apex:facet>
+                <apex:facet name="stop">
+                    <apex:pageBlockTable value="{!accList}" var="accobj">
+                        <apex:column value="{!accobj.name}"/>
+                        <apex:column value="{!accobj.Rating}"/>
+                        <apex:column value="{!accobj.Phone}"/>
+                    </apex:pageBlockTable>               
+                </apex:facet>            
+            </apex:actionStatus>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

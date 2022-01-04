@@ -1,0 +1,10 @@
+<aura:component>
+    <lightning:recordEditForm recordId="003XXXXXXXXXXXXXXX" objectApiName="Contact">
+        <lightning:messages />
+        <lightning:outputField fieldName="AccountId" />
+        <lightning:inputField fieldName="FirstName" />
+        <lightning:inputField fieldName="LastName" />
+        <lightning:inputField fieldName="Email" />
+        <lightning:button class="slds-m-top_small" variant="brand" type="submit" name="update" label="Update" />
+    </lightning:recordEditForm>
+</aura:component>

@@ -1,0 +1,18 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="stdController" >
+	<aura:attribute name="studobj" type="Student1__c" default="{'sobjectType':'Student1__c', 'Student_Firstname__c':'','Student_LastName__c':'','phone_number__c':'','email_address__c':'', 'Department__c':''}"/> 
+    <aura:attribute name="studId" type="string"/>
+    <aura:attribute name="AccountItrt" type="Student1__c[]"/> 
+    <div class="slds-card_body_inner">
+        
+        <lightning:input aura:id="firstName" value="{!v.studobj.Student_Firstname__c}" label="Student First Name" placeholder="Enter Student First Name"/>
+        <lightning:input aura:id="lastName" required="true" value="{!v.studobj.Student_LastName__c}" label="Student Last Name" placeholder="Enter Student Last Name"/>
+        <lightning:input  required="true"  aura:id="phone" value="{!v.studobj.phone_number__c}" label="Student Phone Number" placeholder="Enter Phone Number"/>
+        <!-- <lightning:input aura:id="phone" type="text" label="Phone Number" placeholder="Phone Number" required="true"/> -->
+        <lightning:input aura:id="email" value="{!v.studobj.email_address__c}" label="Student Email address" placeholder="Enter Email address" required="true"  messageWhenPatternMismatch="Enter a valid email address" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"/>
+        <lightning:input aura:id="Department" required="true" value="{!v.studobj.Department__c}" label=" Department" placeholder="Enter Department name"/>
+  	 </div>
+    <div class="slds-no-flex">
+        <lightning:button variant="brand" label="Save" title="Save" onclick="{!c.doSave}"/>
+    </div>
+   
+</aura:component>

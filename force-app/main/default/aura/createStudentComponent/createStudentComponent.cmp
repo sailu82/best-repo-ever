@@ -1,0 +1,26 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="studentController">
+
+    
+    <aura:attribute name="studentobj" type="Student1__c" default="{'sobjectType':'Student1__c', 'Student_Firstname__c':'','email_address__c':'','phone_number__c':'','Department__c':''}"/>
+    <aura:attribute name="Id" type="string"/>
+    <div class="slds-card_body_inner">
+        <lightning:input value="{!v.studentobj.Student_Firstname__c}" label="Student FirstName" placeholder="Enter Student name"/><br></br>
+        <lightning:input value="{!v.studentobj.email_address__c}" label="Email Address" placeholder="Enter Email Address"/><br></br>
+        <lightning:input value="{!v.studentobj.phone_number__c}" label="Phone Number" placeholder="Enter Phone Number"/><br></br>
+        <lightning:input value="{!v.studentobj.Department__c}" label="Department" placeholder="Enter Department Name"/><br></br>  
+  	 </div>
+     
+    <div class="slds-no-flex">
+        <lightning:button variant="brand" label="Save" title="Save" onclick="{!c.doSave}"/>
+    </div>
+    
+    <div class="demo-only" style="height:4rem">
+  <div class="slds-notify_container slds-is-relative">
+    <div class="slds-notify slds-notify_toast slds-theme_info" role="status">
+      <div class="slds-notify__content">
+        <h2 class="slds-text-heading_small">Student Id: {!v.Id}  Student Account Created</h2>
+        </div>
+    </div>
+  </div>
+</div>
+</aura:component>

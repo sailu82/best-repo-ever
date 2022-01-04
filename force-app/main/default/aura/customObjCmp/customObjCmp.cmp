@@ -1,0 +1,25 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="createCase" >
+	<aura:attribute name="accountobj" type="Case" default="{'sobjectType':'Account', 'Name':'','AnnualRevenue':'','Phone':'','AccountNumber':'', 'Site':''}"/>
+    <aura:attribute name="accountId" type="string"/>
+     <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+    <div class="slds-card_body_inner">
+        <lightning:input value="{!v.accountobj.Name}" label="Account Name" placeholder="Enter Account name"/>
+        <lightning:input value="{!v.accountobj.AnnualRevenue}" label="Annual Revenue" placeholder="Enter Annaul Revenue"/>
+        <lightning:input value="{!v.accountobj.Phone}" label="Phone Number" placeholder="Enter Phone Number"/>
+        <lightning:input value="{!v.accountobj.AccountNumber}" label="Account Number" placeholder="Enter Account Number"/>
+        <lightning:input value="{!v.accountobj.Site}" label=" Account Site" placeholder="Enter Account site"/>
+  	 </div>
+    <div class="slds-no-flex">
+        <lightning:button variant="brand" label="Save" title="Save" onclick="{!c.doSave}"/>
+    </div>
+    <div class="demo-only" style="height:4rem">
+  <div class="slds-notify_container slds-is-relative">
+    <div class="slds-notify slds-notify_toast slds-theme_info" role="status">
+      <div class="slds-notify__content">
+        <h2 class="slds-text-heading_small">Account Id: {!v.accountId} Account Created</h2>
+        </div>
+    </div>
+  </div>
+</div>
+</aura:component>

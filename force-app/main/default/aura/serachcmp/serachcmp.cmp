@@ -1,0 +1,32 @@
+<aura:component controller="serachcontroller" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="recordList" type="List"/>
+     <aura:attribute name="bval" type="Boolean" default="false" />
+    <aura:attribute name="allData" type="List" />
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="sortedBy" type="String" default="Name"/>
+ <aura:attribute name="sortedDirection" type="string" default="asc" />
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    <span>
+    	<lightning:input type="search" lable="Search" placeholder="Search from Accounts" aura:id="SearchBox"
+                         onchange="{!c.searchTable}" />
+    </span>
+    <div class="slds-no-flex">
+        <lightning:button variant="brand" label="search" title="Save" onclick="{!c.showForm}"/>
+    </div>
+    <aura:if isTrue="{!v.bval}">
+    <lightning:layout multipleRows="true" horizontalAlign="center">
+            <lightning:layoutItem padding="around-small" size="12">
+                <lightning:datatable keyField="id" data="{! v.recordList}"
+                                     columns="{! v.columns}"
+                                     hideCheckboxColumn="true"
+                                     onsort="{!c.updateSorting}"
+                                     sortedBy="{!v.sortedBy}"
+                                     sortedDirection="{!v.sortedDirection}"  />
+            </lightning:layoutItem>
+    </lightning:layout>
+        <aura:set attribute="else">
+                false
+           </aura:set> 
+             </aura:if>        
+                      
+</aura:component>

@@ -1,0 +1,17 @@
+<template>
+    
+        <lightning-layout>
+            <lightning-layout-item>
+    <p>Hello, {name}!</p>
+    <lightning-input label="Name" value={name} onchange={nameChange}></lightning-input> 
+            </lightning-layout-item>
+            <lightning-layout-item> 
+          <br>
+     <div style="width:200px; padding-left:50px">
+	<p>Hello, {userName}</p>
+	<lightning-input label="Name" name="inp1" onchange={nameChange}></lightning-input>
+      </div>
+</lightning-layout-item>
+</lightning-layout>
+
+</template>

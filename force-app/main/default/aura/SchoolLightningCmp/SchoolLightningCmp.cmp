@@ -1,0 +1,118 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="stdController">
+    
+    <aura:attribute name="studobj" type="Student1__c" default="{'sobjectType':'Student1__c', 'Student_Firstname__c':'','Student_LastName__c':'','phone_number__c':'','email_address__c':'', 'Location__c':'','School_Tour_DateTime__c':'','How_You_Hear_About_Us__c':''}"/>  
+     <aura:attribute name="bval" type="Boolean" default="false" />
+    <lightning:navigation aura:id="navService"/>
+    <lightning:button label="Navigate to registarion form" onclick="{!c.handleClick}"/>
+    <aura:attribute name="stdList" type="Student1__c[]" />
+    <div class="header" style="height:55px">
+    <img src="https://montessori.edokiacademy.com/img/montessori-preschool/Montessori_Preschool_logo-video-en.png" style="position:absolute; top:0; left:0; width:90px; height:90px"/>&nbsp;
+      <img src="https://uploads-ssl.webflow.com/5cdbd42cd519d753c5e16a14/5e2b93a4ba7fff341594db03_5cdbd42cd519d791cae16a4e_logo-p-500.jpeg" style="position:absolute;top:0;right:700px;width:300px;height:90px"/>
+        <a href="https://www.youtube.com/channel/UC7BfBMPUdq-cC9qJC8phgsg" target="_blank" style="position:absolute;top:0;right:100px;width:100px;height:90px;font-size:20px;">YouTube</a>
+        <a href="https://www.facebook.com/gvmschool" target="_blank" style="position:absolute;top:0;right:0px;width:100px;height:90px;font-size:20px;">Facebook</a>
+        <a href="https://www.gvmontessori.com/blog" target="_blank" style="position:absolute; top:0;right:180px;height:100px; width:100px;font-size:20px;">Blog </a>
+        <a href="https://www.gvmontessori.com/resources" target="_blank" style="position:absolute; top:0;right:300px;height:100px; width:100px;font-size:20px;">Resources </a>
+        <a href="https://www.gvmontessori.com/contact-us" target="_blank" style="position:absolute; top:0;right:450px;height:100px; width:100px;font-size:20px;">Contact Us </a>
+    </div >
+     <lightning:button variant="brand" label="Show Current student list"  onclick="{!c.myAction }" /> 
+    
+   <aura:iteration items="{!v.stdList}" var ="a">
+      <div class="slds-card">
+        <div class="slds-media__figure">
+            <lightning:icon iconName="action:approval" size="small"/>  
+        </div>
+        <div class="slds-card__header slds-grid">{!a.Student_Firstname__c}</div>
+        <div class="background">{!a.phone_number__c}</div>
+        <div class="background">{!a.email_address__c}</div>
+    </div>       
+    </aura:iteration>
+         
+    <div class="middle" style="height:1500px;">   
+        <h1 style="text-align:left;font-size:45px;color:Green;font-weight:bolder;font-style:oblique;">Global Village Montessori preschool... </h1>
+       
+        <lightning:carousel disableAutoRefresh="false" disableAutoScroll="false">
+        <lightning:carouselImage
+            src = "https://montessoripreschoolportjefferson.com/images/quote_green06.png"
+            header = "First Card"
+            description = "First card description."
+            alternativeText = "First card accessible description." style="height:500px;width:0px;">
+        </lightning:carouselImage>
+        <lightning:carouselImage
+            src = "https://globalmontessori.com/worldwide/wp-content/uploads/2020/02/20181026_111719-680x340.jpg"
+            header = "Second Card"
+            description = "Second card description."
+            alternativeText = "Second card accessible description." style="height:500px;width:30px;">
+        </lightning:carouselImage>
+        <lightning:carouselImage
+            src = "http://4.bp.blogspot.com/_1RIweY_B6oU/TKuGAm00ZBI/AAAAAAAAAFE/wsCc4FO0dqc/s1600/classroom.JPG"
+            header = "Third Card"
+            description = "Third card description."
+            alternativeText = "Third card accessible description." style="height:500px;width:30px;">            
+        </lightning:carouselImage>
+        <lightning:carouselImage
+            src = "https://static.wixstatic.com/media/93f6f0_a7548e488e7f4e6082fad4d532169bad~mv2.jpeg/v1/fill/w_560,h_374,al_c,q_80,usm_0.66_1.00_0.01/DSC06695.webp"
+            header = "Four Card"
+            description = "Four card description."
+            alternativeText = "Four card accessible description." style="height:500px;width:30px;">       
+        </lightning:carouselImage>
+             <lightning:carouselImage
+            src = "https://www.gannett-cdn.com/presto/2020/02/17/PLAL/8bce033f-9cb7-478e-a187-f4ffdff9f65e-Montessori-3880.jpg"
+            header = "Five Card"
+            description = "Five card description."
+            alternativeText = "Five card accessible description." style="height:500px;width:30px;">       
+        </lightning:carouselImage>
+    </lightning:carousel>
+    </div>
+
+         <div class="middle1" style="height:1200px;">
+          <h1 style="font-size:50px;font-styile:oblique; font-weight:bolder;">Four Locations to Choose From.....</h1><br></br>
+        <div class="slds-grid slds-gutters">
+  <div class="slds-col">
+    <span> <lightning:tile label="Milpitas North" href="https://www.gvmontessori.com/milpitas-north/welcome">
+             <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Milpitas_Cit_Hall_%28cropped%29.jpg" style="width:200px;height:100px;"/>
+    </lightning:tile></span>
+  </div>
+  <div class="slds-col">
+    <span><lightning:tile label="Milpitas South" href="https://www.gvmontessori.com/milpitas-south/welcome">
+             <img src="https://goldsea.com/Parenting/Malls/msq.jpg" style="width:200px;height:100px;"/>
+    </lightning:tile></span>
+  </div>
+  <div class="slds-col">
+    <span><lightning:tile label="Pleasanton" href="https://www.gvmontessori.com/pleasanton/welcome">
+             <img src="https://trivalleyconnect.org/wp-content/uploads/2019/06/pleasanton-008.jpg" style="width:200px;height:100px;"/>
+    </lightning:tile></span>
+  </div>
+            <div class="slds-col">
+    <span><lightning:tile label="Tracy" href="https://www.gvmontessori.com/tracy/welcome">
+             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Tracy_City_Hall_Front.jpeg/291px-Tracy_City_Hall_Front.jpeg" style="width:200px;height:100px;"/>
+    </lightning:tile></span>
+  </div>
+            </div><br></br><br></br><br></br>
+       
+   <div class="slds-no-flex">
+        <lightning:button variant="brand" label="Show form" title="Save" onclick="{!c.showForm}"/>
+    </div>
+           <aura:if isTrue="{!v.bval}">
+            <lightning:input value="{!v.studobj.Student_Firstname__c}" label="Student First Name" placeholder="Enter Student First Name"/>
+        <lightning:input value="{!v.studobj.Student_LastName__c}" label="Student Last Name" placeholder="Enter Student Last Name"/>
+        <lightning:input value="{!v.studobj.phone_number__c}" label="Student Phone Number" placeholder="Enter Phone Number"/>
+          <lightning:input value="{!v.studobj.email_address__c}" label="Student Email Address" placeholder="Enter Email Address"/><br></br>
+           <lightning:input value="{!v.studobj.Location__c}" label="enter location" placeholder="Enter Location"/>
+               <lightning:input value="{!v.studobj.School_Tour_DateTime__c}" label="Enter date and Time for school tour" placeholder="Enter date and time"/>  
+             <lightning:input value="{!v.studobj.How_You_Hear_About_Us__c}" label="How you hear about us" placeholder="Select how you hear about us"/> 
+               <lightning:button variant="brand" label="Save" title="Save" onclick="{!c.doSave}"/>
+               <aura:set attribute="else">
+                false
+           </aura:set> 
+             </aura:if>        
+             </div>  <br></br><br></br><br></br>            
+   
+        
+    <div class="footer" style="height:40px">  
+        <img src="https://montessori.edokiacademy.com/img/montessori-preschool/Montessori_Preschool_logo-video-en.png" style="position:absolute;bottom:0;left:0px;width:90px;height:90px"/>
+        <h1 style="position:absolute; top:0;right:550px;height:100px; width:150px;text-align:right;font-size:18px;color:white;font-weight:bolder;font-style:oblique;"><a href="https://www.gvmontessori.com/what-is-montessori" target="_blank">What is Montessori</a></h1>
+        <h1 style="position:absolute;top:0;right:200px;width:150px;text-align:right;font-size:20px;color:white;font-weight:bolder;font-style:oblique;"><a href="https://www.gvmontessori.com/program" target="_blank">Our Program</a></h1>
+        <h1 style="position:absolute;top:0;right:400px;width:150px;text-align:right;font-size:20px;color:white;font-weight:bolder;font-style:oblique;"><a href="https://www.gvmontessori.com/testimonials" target="_blank">Reviews</a></h1> 	
+       
+               </div>       	
+</aura:component>

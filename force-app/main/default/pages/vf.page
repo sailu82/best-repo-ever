@@ -1,0 +1,39 @@
+<apex:page standardController="Account" extensions="contactVf1">
+   <apex:form style="border-style:solid;border-width:2px;border-color:blue;background-color: yellow;">
+   <h1 style="color:blue; font-size:30px"> Account </h1>
+  <apex:pageBlock title="Account Page" >
+  <apex:pageBlockSection title="Account Information">
+  <apex:inputField value="{!Account.Name}"  />
+  <apex:inputField value="{!Account.Type}"/>
+  <apex:inputField value="{!Account.Rating}"/>
+  <apex:inputField value="{!Account.Phone}"/>
+  <apex:inputField value="{!Account.Industry}"/>
+  <apex:inputField value="{!Account.NumberofLocations__c}"/>  
+  </apex:pageBlockSection> 
+  <apex:pageBlockSection title="Address Information">
+  <apex:inputfield value="{!Account.BillingCity}"/>
+  <apex:inputfield value="{!Account.BillingState}"/>
+  <apex:inputfield value="{!Account.BillingCountry}"/>
+  <apex:inputfield value="{!Account.BillingStreet}"/>
+  <apex:inputfield value="{!Account.ShippingCity}"/>
+  <apex:inputfield value="{!Account.ShippingState}"/>
+  <apex:inputfield value="{!Account.ShippingCountry}"/>
+  <apex:inputfield value="{!Account.ShippingStreet}"/>  
+  </apex:pageBlockSection>
+  <apex:pageBlockButtons >
+  <apex:commandButton value="Save" action="{!save}" style="color:blue; font-sixe:15px;"/> 
+  <apex:commandButton value="Cancel" action="{!cancel}" style="color:blue; font-sixe:15px;"/> 
+  </apex:pageBlockButtons> 
+  </apex:pageBlock>                
+        <apex:pageblock id="ContactList"> 
+            <apex:pageBlockTable value="{!contlst}" var="cont" rendered="{!NOT(ISNULL(contlst))}">                 
+                <apex:column headerValue="Contact Name">
+                <apex:outputLink value="/{!cont.id}" target="_blank">{!cont.Name}</apex:outputLink> </apex:column>               
+                <apex:column value="{!cont.Name}"/> 
+                <apex:column value="{!cont.Phone}"/>
+                <apex:column value="{!cont.Email}"/>              
+            </apex:pageBlockTable>            
+            <apex:outputLabel value="No records to display" rendered="{!(ISNULL(contlst))}" styleClass="noRowsHeader"></apex:outputLabel> 
+        </apex:pageblock> 
+  </apex:form>
+</apex:page>

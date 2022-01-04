@@ -1,0 +1,81 @@
+<template>
+    <div class="slds-form lg-cs" style='background-color:white; width: 620px; margin: auto; border: 1px solid rgb(0, 0, 8);'>
+    <div style="width: 620px; height: 100px; background-image: url('https://interconnectsupport.iassist.com/images/intercept/header.png'); background-repeat: no-repeat; text-align: center;">
+        <h1 style="padding-top: 15px; color: white; font-size: 30px;">Interconnect Patient Authorization</h1>
+    </div>
+        <div style="width: 620px; text-align: center; padding-top: 50px; overflow: hidden;">
+            <div style="float: left;">
+                <img src={pictureUrl} style="max-width: 250px; padding-left: 20px; padding-top: 48px;"/>
+            </div>        
+        </div> 
+        <br>              
+        <div class="slds-p-left_medium">
+        <strong>
+                Please complete this online consent form which gives you access to a comprehensive,
+            personalized support services for your treatment. For any additional help,
+            contact Interconnect Support Services at 1-844-622-4278.
+        </strong> 
+            <br/><br/>           
+        </div>               
+        <div class="slds-p-around_small  slds-size_8-of-12 lgc-bg">
+            <lightning-input type="text" value={FirstName} label="First Name" required="true" 
+            onchange={handleInputChange1} max-width="35"></lightning-input>
+            </div>
+            <div class="slds-p-around_small slds-size_8-of-12 lgc-bg"> 
+            <lightning-input type="text" value ={MiddleName} label="Middle Name" required="true" onchange={handleInputChange2}>
+            </lightning-input>
+            </div>
+            <div class="slds-p-around_small slds-size_8-of-12 lgc-bg">
+            <lightning-input type="text" value={LastName} label="Last Name" required="true" onchange={handleInputChange3}>
+            </lightning-input>
+            </div>
+            <div class="slds-p-left_small slds-size_8-of-12 lgc-bg"> 
+            <lightning-input type="text" value={Address} label="Address" required="true" onchange={handleInputChange}></lightning-input>
+            </div>
+            <div class="slds-p-around_small slds-size_8-of-12 lgc-bg">
+                <lightning-input type="text" id="PostalCode" label="Postalcode" required="true" value={PostalCode}  onchange={handlePostalCodeChange}>
+            </lightning-input>
+            </div>
+            <div class="slds-p-around_small slds-size_8-of-12 lgc-bg">
+            <lightning-input type="text" id="City" label="City" required="true" value={City} onchange={handleCityChange}></lightning-input>
+            </div>
+            <div class="slds-p-around_small slds-size_8-of-12 lgc-bg">
+            <lightning-combobox name="progress" id="State" label="State" value={State} placeholder="Select State" options={options}
+            onchange={handleStateChange}></lightning-combobox>
+            </div>
+            <div class="slds-p-around_small slds-size_8-of-12 lgc-bg">
+            <lightning-radio-group name="gender" label="Gender" options={options1} value={value1} required type="radio">
+            </lightning-radio-group>   
+            </div>            
+            <div class="slds-p-around_small slds-size_8-of-12 lgc-bg">
+            <lightning-input type="text" value={SSN} label="Last four Digits of SSN" required="true" onchange={handleInputChange}>
+            </lightning-input>
+            </div>
+            <div class="slds-p-around_small slds-size_8-of-12 lgc-bg">
+            <lightning-input type="date" name="input1" value={dob} required="true" label="Date Of Birth" onchange={handleInputChange}></lightning-input>
+            </div>
+            <div class="slds-p-around_small slds-size_8-of-12 lgc-bg">
+            <lightning-input type="Number" value={Phone} label="Patient Phone" required="true" onchange={handleInputChange}> </lightning-input>
+            </div>
+            <div class="slds-p-around_small slds-size_8-of-12 lgc-bg">
+            <lightning-input type="email" value={email} label="Patient Email " onchange={handleInputChange}></lightning-input>
+            </div>
+            <div class="slds-p-around_small slds-size_8-of-12 lgc-bg">
+            <lightning-button variant="success" label="Continue" title="Successful action" onclick={handleContinue}
+            class="icon-circle-arrow-right right" ></lightning-button>
+            </div>                                   
+                    <div class="slds-p-left_small  lgc-bg"> 
+                    <img src={picture1Url} style="max-width: 250px; padding-left: 20px; padding-top: 48px;"/>
+                </div>                                      
+                    <div class="slds-p-left_small  lgc-bg">                        
+                        <br/>INTERCONNECT and its logo, and the INTERCEPT logo, are registered trademarks of Intercept
+                    </br>
+                        Pharmaceuticals, Inc.   
+                        <br/><br/> © 2021 Intercept Pharmaceuticals, Inc. All rights reserved. US-PP-OT-0013 05/21       
+                            <br/>  
+                            <br/>   
+                            </div>                   
+                        
+    </div>
+    </div>    
+    </template>

@@ -1,0 +1,17 @@
+<apex:page controller="customControllercls">
+<apex:form style="border-style:solid;border-width:4px;border-color:lightgreen;">
+<apex:pageBlock title="College Info" >
+<apex:pageBlockSection title="College Info">
+<apex:inputField value="{!cObj.Name}" style="color:red;font-size:20px;"/>
+<apex:inputField value="{!cObj.College_Address__c}"  style="color:red;font-size:20px;" />
+<apex:inputField value="{!cObj.college_rating__c}" style="color:red;font-size:20px;" />
+<apex:inputField value="{!cObj.State__c}"  style="color:red;font-size:20px;"/>
+<apex:inputField value="{!cObj.Country__c}"  style="color:red;font-size:20px;"/>
+</apex:pageBlockSection>
+<apex:pageBlockButtons location="bottom">
+<apex:commandButton value="save" action="{!saveCollDetails}" style="color:blue;font-size:18px;"/>
+<apex:commandButton value="Cancel" action="{!cancel1}" style="color:blue;font-size:18px;"/>
+</apex:pageBlockButtons>
+</apex:pageBlock>
+</apex:form>  
+</apex:page>

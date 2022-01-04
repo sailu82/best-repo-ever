@@ -1,0 +1,11 @@
+<aura:component controller="datatableAura">
+	<aura:attribute type="object" name="data"/>
+    <aura:attribute name="columns" type="object"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <lightning:datatable aura:id="stdTable"
+                         keyField="Id"
+                         data="{!v.data}"
+                         columns="{!v.columns}"/>
+</aura:component>

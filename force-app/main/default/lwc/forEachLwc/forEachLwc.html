@@ -1,0 +1,19 @@
+<template>
+   <lightning-card title="forEach Demo" icon-name="custom:custom15">
+           <lightning-layout>
+               <lightning-layout-item padding="around-small" size="12">
+                 <ul class="slds-has-dividers_around-space">
+                   <template for:each={studentdetails} for:item="details">
+                        <li  class="slds-item" key={details.Id}>               
+                             <lightning-layout vertical-align="center" horizontal-align="spread">
+             <lightning-layout-item padding="horizontal-small">
+        {details.Name}, {details.Branch}
+          </lightning-layout-item>
+      </lightning-layout>
+         </li> 
+     </template>
+      </ul>
+        </lightning-layout-item>
+         </lightning-layout>
+            </lightning-card> 
+</template>

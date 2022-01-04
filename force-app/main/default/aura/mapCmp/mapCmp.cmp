@@ -1,0 +1,19 @@
+<aura:component controller="ShowAddressDetails"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+                access="global">
+    <aura:attribute name="mapMarkersData" type="Object"/>
+    <aura:attribute name="mapCenter" type="Object"/>
+    <aura:attribute name="zoomLevel" type="Integer" default="4" />
+    <aura:attribute name="markersTitle" type="String" />
+    <aura:attribute name="showFooter" type="Boolean" default="true"/>
+    <aura:attribute name="accObj" type="Account[]"/>
+    
+    <aura:handler name="init" value="{! this }" action="{! c.doInit }"/>
+    <aura:if isTrue="{!v.mapMarkersData.length > 0}" >
+        <lightning:map mapMarkers="{! v.mapMarkersData }"
+                       center="{! v.mapCenter }"
+                       zoomLevel="{! v.zoomLevel }"
+                       markersTitle="{! v.markersTitle }"
+                       showFooter="{ !v.showFooter }" />
+    </aura:if>
+</aura:component>

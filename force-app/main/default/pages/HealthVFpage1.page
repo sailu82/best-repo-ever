@@ -1,0 +1,19 @@
+<apex:page sidebar="false" showHeader="false" standardController="AccountP__c" >
+  <apex:form style="border-style:solid;border-width:2px;
+                      border-color:blue;background-color: yellow;">
+   <h1 style="color:blue; font-size:30px"> Signup </h1>
+  <apex:pageBlock title="Registration Page" >
+  <apex:pageBlockSection >
+  <apex:inputField value="{!AccountP__c.First_Name__c	}"/>
+  <apex:inputField value="{!AccountP__c.Last_Name__c}"/>
+  <apex:inputField value="{!AccountP__c.Date_of_Birth__c}"/>
+  <apex:inputField value="{!AccountP__c.Email_Address__c}"/>
+  <apex:inputField value="{!AccountP__c.Phone_Number__c}"/>  
+  </apex:pageBlockSection> 
+  <apex:pageBlockButtons location="bottom" >
+  <apex:commandButton value="Save" action="{!save}" style="color:blue; font-sixe:15px;"/> 
+  
+      </apex:pageBlockButtons> 
+  </apex:pageBlock>
+  </apex:form>
+</apex:page>

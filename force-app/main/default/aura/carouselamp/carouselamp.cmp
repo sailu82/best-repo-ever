@@ -1,0 +1,51 @@
+<aura:component>
+    <lightning:carousel disableAutoRefresh="false" disableAutoScroll="false">
+        <lightning:carouselImage
+         src = "https://upload.wikimedia.org/wikipedia/commons/c/c9/Moon.jpg"
+                    header = "image1"   
+                    alternative-text = "First card accessible description."
+                    href = "javascript:void(0);">
+        </lightning:carouselImage>
+        <lightning:carouselImage
+            src = "https://upload.wikimedia.org/wikipedia/commons/4/41/Sunflower_from_Silesia2.jpg"
+                    header = "image2"   
+                    alternative-text = "First card accessible description."
+                    href = "javascript:void(0);">
+        </lightning:carouselImage>
+        <lightning:carouselImage
+            src = "https://www.cleverfiles.com/howto/wp-content/uploads/2018/03/minion.jpg"
+                    header = "image3"   
+                    alternative-text = "First card accessible description."
+                    href = "javascript:void(0);">
+        </lightning:carouselImage>
+    </lightning:carousel>
+    
+<div class="slds-m-vertical_medium">
+        <h1 class="slds-text-heading_small">Formatted Address with Link</h1>
+        <p class="slds-text-body_regular">This component formats an address and automatically links it to Google Maps.</p>
+    </div>
+
+    <lightning:formattedAddress
+        street="121 Spear St."
+        city="San Francisco"
+        country="US"
+        province="CA"
+        postalCode="94105"
+    />
+
+     <div class="slds-m-vertical_medium">
+        <h1 class="slds-text-heading_small">Formatted Address in Plain Text</h1>
+        <p class="slds-text-body_regular">This component formats an address but doesn't link to Google Maps.</p>
+    </div>
+
+    <lightning:formattedAddress
+        street="121 Spear St."
+        city="San Francisco"
+        country="US"
+        province="CA"
+        postalCode="94105"
+        disabled="true"
+    />
+
+
+</aura:component>

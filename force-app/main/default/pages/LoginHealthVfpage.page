@@ -1,0 +1,16 @@
+<apex:page sidebar="false" showHeader="false"  controller="loginhealthvfpagecls">
+  <apex:form style="border-style:solid;border-width:2px;
+                      border-color:blue;background-color: yellow;">
+   <h1 style="text-align:center;color:blue; font-size: 40px;font-family:verdana;">Login Page </h1>
+  <apex:pageBlock title="Healer Login" >
+  <apex:pageBlockButtons location="bottom" >
+     <apex:commandButton action="{!save1}" value="Save" style="color:blue;font-size:10px;"/>
+      <apex:commandButton action="{!cancel}" value="Cancel" style="color:blue;font-size:10px;"/>
+  </apex:pageBlockButtons>
+  <apex:pageBlockSection >
+  <apex:inputField value="{!ac.User_Name__c}"  />
+  <apex:inputField value="{!ac.Password1__c}"/>
+  </apex:pageBlockSection>
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

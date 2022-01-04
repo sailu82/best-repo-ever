@@ -1,0 +1,23 @@
+<apex:page showHeader="false" sidebar="false" standardController="Account">
+<apex:form >
+  <apex:pageBlock title="Account Information">
+  <apex:pageBlockSection title="Account Details">
+  
+   Name : {!Account.Name} <br/>
+   Rating : {!Account.Rating} <br/>
+   Fax : {!Account.Fax}
+  <apex:image url="{!$Label.Google_logo}"/>
+  </apex:pageBlockSection> 
+  </apex:pageBlock>
+  <apex:pageBlock title="Contact Information">
+  <apex:pageBlockSection title="Contact Details">
+  <apex:image url="{!$Label.wipro_logo}"/>
+  </apex:pageBlockSection> 
+  </apex:pageBlock>
+  <apex:pageBlock title="User Information" rendered="true">
+  <apex:pageBlockSection title="User Details">
+  {!$User.FirstName} {!$User.LastName}
+  </apex:pageBlockSection> 
+  </apex:pageBlock>
+  </apex:form>
+</apex:page>

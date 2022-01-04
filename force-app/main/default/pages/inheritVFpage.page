@@ -1,0 +1,5 @@
+<apex:page controller="InheritedSharingClass">
+    <apex:repeat value="{!AllContacts}" var="record">
+        {!record.Name}<br></br>
+    </apex:repeat>
+</apex:page>

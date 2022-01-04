@@ -1,0 +1,42 @@
+<aura:component >
+    <h1 style="background-color:red">Formatted Address</h1>
+	<div class="slds-m-vertical_medium">
+        <h1 class="slds-text-heading_small">Formatted Address with Link</h1>
+        <p class="slds-text-body_regular">This component formats an address and automatically links it to Google Maps.</p>
+    </div>
+    <lightning:formattedAddress
+        street="121 Spear St."
+        city="San Francisco"
+        country="US"
+        province="CA"
+        postalCode="94105"
+    />
+     <div class="slds-m-vertical_medium">
+        <h1 class="slds-text-heading_small">Formatted Address in Plain Text</h1>
+        <p class="slds-text-body_regular">This component formats an address but doesn't link to Google Maps.</p>
+    </div>
+    <lightning:formattedAddress
+        street="121 Spear St."
+        city="San Francisco"
+        country="US"
+        province="CA"
+        postalCode="94105"
+        disabled="true"
+    /><br></br>
+    <h1 style="background-color:yellow">formatted datatime</h1>
+    <p><lightning:formattedDateTime value="1479944705000"/></p>
+    <p><lightning:formattedDateTime value="1479944705000" year="2-digit" month="short" day="2-digit" weekday="narrow"/></p>
+    <p><lightning:formattedDateTime value="1479944705000" year="2-digit" month="short" day="2-digit" weekday="long"/></p><br></br>
+    <h1 style="background-color:blue">Formatted Email with icon </h1>
+ <div class="slds-m-vertical_medium">
+                <h1 class="slds-text-heading_small">Formatted Email</h1>
+                <p class="slds-text-body_regular">Default behavior displays an email address with an email icon. The email address is automatically linked to open the default mail app.</p>
+            </div>
+    <p><lightning:formattedEmail value="hello@example.com" /></p>
+<h1 style="background-color:yellow">formattedtext</h1>
+    <p><lightning:formattedEmail value="hello@example.com" /></p>
+    <p><lightning:formattedText value="Email salesforce.com and info.salesforce.com" /></p>
+    <p><lightning:formattedText value="Email info@salesforce.com" /></p>
+    <p><lightning:formattedText linkify="true" value="Email salesforce.com and info.salesforce.com" /></p>
+    <p><lightning:formattedText linkify="true" value="Email info@salesforce.com" /></p>
+</aura:component>

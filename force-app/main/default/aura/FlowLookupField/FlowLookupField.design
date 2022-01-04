@@ -1,0 +1,5 @@
+<design:component>
+	<design:attribute name="sObjectType" label="Object API Name" /> 
+    <design:attribute name="lookupFieldName" label="Field API Name" /> 
+    <design:attribute name="lookupFieldResultId" label="Lookup Field Id (output)" /> 
+</design:component>

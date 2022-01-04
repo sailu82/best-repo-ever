@@ -1,0 +1,37 @@
+<template>
+    <lightning-card title="Candidate Tracker">
+        <lightning-layout multiple-rows="true">
+            <lightning-layout-item flexibility="auto" padding="around-small" size="12">
+                <div class="page-section page-header">
+                    <img src={image1} class="slds-var-m-around_medium">
+                </div> 
+                </lightning-layout-item>
+            </lightning-layout>
+            </lightning-card>
+                
+            <lightning-card>
+            <lightning-layout multiple-rows="true">
+            <div class="page-section page-right">
+            <lightning-layout-item flexibility="auto" padding="around-small" size="12">
+                    <div class="slds-p-around_medium lgc-bg">
+                          <lightning-input type="text" label="Enter Full Name" ></lightning-input>
+                        <lightning-input type="text" label="Enter Phone number" ></lightning-input>
+                        <lightning-input type="email" label="Email address"></lightning-input>
+                        <lightning-input type="checkbox" label="Is interviewed" name="input1" size="4"></lightning-input>
+                        <div class="slds-m-top_medium slds-m-bottom_x-large">
+                            <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+                            </h2>
+                            <lightning-button-group>
+                                <lightning-button variant="brand" label="Refresh"></lightning-button>
+                                <lightning-button variant="brand" label="Edit"></lightning-button>
+                                <lightning-button variant="brand" label="Save"></lightning-button>
+                            </lightning-button-group>
+                        </div>
+                            
+                        
+                </div>
+            </lightning-layout-item>
+        </div>
+        </lightning-layout>      
+    </lightning-card>
+</template>

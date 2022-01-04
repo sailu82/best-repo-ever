@@ -1,0 +1,22 @@
+<apex:page standardController="Lead">
+    
+    <apex:form >     
+
+        <!-- Excluded Region -->
+        <apex:sectionHeader title="Excluded actionRegion"/>
+        <apex:outputPanel id="ExcludedRegion">
+            <apex:inputField value="{!Lead.LastName}"/>
+        </apex:outputPanel>        
+    
+		<!-- Included Region -->        
+        <apex:actionRegion >        
+            <apex:sectionHeader title="Included actionRegion"/>
+            <apex:outputPanel id="IncludedRegion">
+				<apex:inputField value="{!Lead.Company}"/>		
+            </apex:outputPanel>
+            <apex:commandButton value="Save" action="{!save}"
+                                reRender="IncludedRegion, ExcludedRegion"/>
+		</apex:actionRegion>            
+    </apex:form>
+    
+</apex:page>

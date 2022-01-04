@@ -1,0 +1,121 @@
+<template>
+        <lightning-card  title="Tourism in California">
+                <lightning-tabset variant="scoped">
+            <lightning-tab label="Disneyland">
+               <img src="https://g.foolcdn.com/editorial/images/611770/disdisneyland.jpg"/>
+            </lightning-tab>
+                <lightning-tab label="Golden Gate Bridge">
+                    <img src="https://www.goldengate.org/assets/1/15/gallerymaindimensionid/currie_bridge_from_south_side.jpg?2575"/>
+                </lightning-tab>
+                <lightning-tab label="Yosemite National Park">
+                    <img src="https://www.planetware.com/photos-large/USCA/california-yosemite-falls-reflection-and-trees.jpg"/>
+                </lightning-tab>
+                <lightning-tab label="National Park">
+                <lightning-layout>
+                <lightning-layout-item>
+                         <div class="slds-size_3-of-4" >        
+                      <div class="slds-box slds-box_X-small slds-text-align_center slds-m-around_x-small">Tourist places In California
+                    <div class="slds-media slds-media_center">
+                    <lightning-carousel>
+                        <lightning-carousel-image
+                            src = "https://www.planetware.com/wpimages/2019/08/california-best-national-parks-death-valley-national-park.jpg"
+                            header = "Death Valley National Park"
+                            
+                            alternative-text = "First card accessible description."
+                            href = "javascript:void(0);">
+                        </lightning-carousel-image>
+                        <lightning-carousel-image
+                            src = "https://www.planetware.com/wpimages/2019/08/california-best-national-parks-redwood-national-state-parks.jpg"
+                            header = "Redwood National and State Parks"
+                            
+                            alternative-text = "Second card accessible description."
+                            href = "javascript:void(0);">
+                        </lightning-carousel-image>
+                        <lightning-carousel-image
+                            src = "https://www.planetware.com/wpimages/2019/08/california-best-national-parks-sequoia-kings-canyon-national-park.jpg"
+                            header = "Kings Canyon National Park"
+                            
+                            alternative-text = "Third card accessible description."
+                            href = "javascript:void(0);">
+                        </lightning-carousel-image>
+                    </lightning-carousel>
+                </div>
+                      </div>
+        </div>
+                </lightning-layout-item>
+        </lightning-layout> 
+                </lightning-tab>
+        
+            <lightning-tab label="Tourist Detail Form">
+                <lightning-input type="text" label="Enter Name"></lightning-input>
+                <lightning-input type="number" label="Enter Phone Number"></lightning-input>
+                <lightning-input type="Email" label="Enter email Address"></lightning-input>
+            </lightning-tab>
+        </lightning-tabset>
+        </lightning-card>
+        <lightning-card>
+            <p>{activeSectionsMessage}</p>
+        
+            <lightning-accordion allow-multiple-sections-open
+                                 onsectiontoggle={handleSectionToggle}
+                                 active-section-name={activeSections}>
+                <lightning-accordion-section name="1" label="tourist Spot 1">
+                    <p>Golden Gate Bridge 1.</p>
+                    <img src="https://www.goldengate.org/assets/1/15/gallerymaindimensionid/currie_bridge_from_south_side.jpg?2575"/>
+                    <p>One of the most beautiful cities in America, San Francisco should 
+                    be on everyone's must-see list. The ocean and hills provide a stunning
+                     natural setting, but the quaint neighborhoods, historic sites, green 
+                     spaces, inspiring cultural institutions, and relaxed attitude are what
+                     truly make this city special.
+                     The iconic Golden Gate Bridge is one of the key sights and what many
+                      people call to mind when they think of the San Francisco, and even 
+                      California. The orange frame against the blue water of
+                       San Francisco Bay, or rising out of the fog that often covers the 
+                       area is an unforgettable sight. You can appreciate the bridge from 
+                       afar or, for a more personal experience, drive over it, walk on it, 
+                       or even bike across it.Other popular tourist attractions include 
+                       Fisherman's Wharf and the infamous Alcatraz Island. This former jail 
+                       is now a national park and well worth a visit. Ferries leave for the
+                        island from Pier 33 near Fisherman's Wharf.</p>
+                </lightning-accordion-section>
+        
+                <lightning-accordion-section name="2" label="tourist spot 2">
+                    <p>Yosemite National Park 2.</p>
+                    <img src="https://www.planetware.com/photos-large/USCA/california-yosemite-falls-reflection-and-trees.jpg"/>
+                    <p>Yosemite has long been a place of inspiration for
+                     artists, climbers, and nature lovers. Beginning in the 1920s, 
+                     Ansel Adams' stunning black-and-white photographs of Yosemite drew 
+                     attention to the park's breathtaking landscapes and iconic sites like 
+                    never before.Following WWII, climbers descended on the park and agonized
+                     over how to ascend the magnificent sheer walls. In their attempts, 
+                     failures, and eventual successes, they created a cult following in 
+                     Yosemite like no other climbing area in history.And all along, 
+                     campers and hikers have been coming here to lose themselves in the 
+                     park's magnificent mountains and valleys.</p>
+                </lightning-accordion-section>
+        
+                <lightning-accordion-section name="3" label="tourist Spot 3">
+                    <p>Disneyland 3.</p>
+                    <img src="https://g.foolcdn.com/editorial/images/611770/disdisneyland.jpg"/>
+                    <p>Disneyland, located in Anaheim, is California's premier
+                     family destination and has been for decades. This massive amusement
+                      park is home to all kinds of rides, games, shows, and entertainment, 
+                      complete with restaurants and hotels. The park is a combination of
+                       theme rides and recreated worlds and cultures. You can find shows 
+                       and other entertainment designed for both children and adults.Long line
+                        ups and wait times have been reduced somewhat by the invention of FastPass+,
+                         which gives you the ability to book specific ride times, a hug with a 
+                         character, and entertainment events. However, when kids are out of school,
+                          either for the summer, Christmas, spring break, or any other holiday, you
+                           can be sure that the park will be very busy.Keep in mind there
+                            is more to Disneyland than just the parks. The entire Disneyland 
+                            resort experience features hotels, dining, shopping at the Downtown Disney 
+                            District, and the Disney Adventure Park. Although the parks are definitely
+                             what your children are here to see, you'll find something fun for everyone
+                              in the family.</p>
+                </lightning-accordion-section>
+            </lightning-accordion>
+        </lightning-card>
+        
+        
+    </template>

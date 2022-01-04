@@ -1,0 +1,20 @@
+<apex:page sidebar="false" showHeader="false" standardController="Student1__c" >
+  <apex:form style="border-style:solid;border-width:2px;
+                      border-color:blue;background-color: yellow;">
+   <h1 style="text-align:center;color:blue; font-size: 40px;font-family:verdana;"> Student Data </h1>
+  <apex:pageBlock title="Student Information Page" >
+  <apex:pageBlockButtons >
+                <apex:commandButton action="{!save}" value="Save" style="color:blue;font-size:10px;"/>
+            </apex:pageBlockButtons>
+  <apex:pageBlockSection title="Student Detail">
+  <apex:inputField value="{!Student1__c.Name}"  />
+  <apex:inputField value="{!Student1__c.phone_number__c}"/>
+  <apex:inputField value="{!Student1__c.Student_SSN__c}"/>
+  <apex:inputField value="{!Student1__c.email_address__c}"/>
+  <apex:inputField value="{!Student1__c.Department__c}"/>  
+  <apex:inputfield value="{!Student1__c.Joining_Date__c}"/>
+  <apex:inputfield value="{!Student1__c.Status__c}"/> 
+  </apex:pageBlockSection>
+  </apex:pageBlock>
+  </apex:form>
+</apex:page>

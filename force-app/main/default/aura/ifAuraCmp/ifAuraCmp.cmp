@@ -1,0 +1,20 @@
+<aura:component >
+    <aura:attribute name="truthy" default="false" type="Boolean"/>
+    <aura:attribute name="colorlist" type="List" default="['red','yellow','orange','blue','green']"/>
+    <aura:attribute name="mapvar" type="List"/>
+    <aura:if isTrue="{!v.truthy}">
+         True
+         <aura:set attribute="else">
+         False
+         </aura:set>
+    </aura:if>
+    <aura:iteration items="{!v.colorlist}" var="item">
+    {!item}<br></br>
+    </aura:iteration><br></br>
+    <aura:iteration items="{!v.mapvar}" var="map1">
+    key:- {!map1.key} and value: {!map1.value}<br></br>
+    </aura:iteration>
+    
+    <lightning:button label="Createmap" onclick="{!c.doCreateMap}"/>
+    
+</aura:component>

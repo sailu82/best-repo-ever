@@ -1,0 +1,104 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,lightning:isUrlAddressable" access="global" >
+	<aura:attribute name="fname" type="String" /> 
+    <aura:attribute name="lname" type="string"/>
+    <aura:attribute name="pnumber" type="integer"/>
+    <aura:attribute name="dbirth" type="date"/>
+     <aura:attribute name="city1" type="string"/>
+     <aura:attribute name="state1" type="string"/>
+     <aura:attribute name="street1" type="string"/>   
+    <aura:attribute name="efirstname" type="string"/>
+    <aura:attribute name="elastname" type="string"/>
+    <aura:attribute name="ephonenumber" type="integer"/>
+    <aura:attribute name="edateofbirth" type="integer"/>
+    <aura:attribute name="ecity" type="string"/>
+    <aura:attribute name="estate" type="string"/>
+    <aura:attribute name="estreet" type="string"/>
+    <aura:attribute name="mapMarkers" type="Object"/>
+    <aura:attribute name="zoomLevel" type="Integer" />
+    <div class="slds-grid slds-wrap" style="padding:20px;"> 
+		<div class="slds-col slds-size_6-of-12  slds-m-bottom--small">
+			<div class="slds-form-element">                        
+              <div class="slds-form-element__controller">
+                 <lightning:input label="Enter First Name" value="{!v.fname}"/>
+              </div>
+            </div>
+      	</div>
+    </div>
+    <div class="slds-grid slds-wrap" style="padding:20px;"> 
+          <div class="slds-col slds-size_6-of-12  slds-m-bottom--small">
+               <div class="slds-form-element">                        
+                  <div class="slds-form-element__controller">
+                      	<lightning:input label="Enter Last Name" value="{!v.lname}"/>
+                    </div>
+                </div>
+		</div>
+    </div>
+                     
+    <div class="slds-grid slds-wrap" style="padding:20px;"> 
+		<div class="slds-col slds-size_6-of-12  slds-m-bottom--small">
+			<div class="slds-form-element">                        
+              <div class="slds-form-element__controller">
+                  <lightning:input label="Enter PhoneNumber" value="{!v.pnumber}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slds-grid slds-wrap" style="padding:20px;"> 
+		<div class="slds-col slds-size_6-of-12  slds-m-bottom--small">
+			<div class="slds-form-element">                        
+              <div class="slds-form-element__controller">
+                  <lightning:input label="Enter DOB" value="{!v.dbirth}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slds-grid slds-wrap" style="padding:20px;"> 
+		<div class="slds-col slds-size_6-of-12  slds-m-bottom--small">
+			<div class="slds-form-element">                        
+              <div class="slds-form-element__controller">
+                  <lightning:input label="Enter city" value="{!v.city1}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slds-grid slds-wrap" style="padding:20px;"> 
+		<div class="slds-col slds-size_6-of-12  slds-m-bottom--small">
+			<div class="slds-form-element">                        
+              <div class="slds-form-element__controller">
+                  <lightning:input label="Enter state" value="{!v.state1}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slds-grid slds-wrap" style="padding:20px;"> 
+		<div class="slds-col slds-size_6-of-12  slds-m-bottom--small">
+			<div class="slds-form-element">                        
+              <div class="slds-form-element__controller">
+                  <lightning:input label="Enter street" value="{!v.street1}"/>
+                </div>  
+            </div>
+        </div>
+    </div>
+    
+    <div style="padding:20px;" ><lightning:button label="Submit" onclick="{!c.submit }"/></div><br></br>
+    <lightning:map 
+        mapMarkers="{! v.mapMarkers }" 
+        zoomLevel="{!v.zoomLevel}" />
+    <lightning:card/>
+     <lightning:card title="Form Details">
+         <p class="slds-p-horizontal_small">
+    <ul> <li>Employee First Name:-{!v.efirstname}</li><br></br>
+    <li>Employee Last Name:- {!v.elastname}</li><br></br>
+    <li>Employee Phone Number:- {!v.ephonenumber}</li><br></br>
+    <li>Employee DOB :-{!v.edateofbirth}</li><br></br>
+        <li>Employee city:-{!v.ecity}</li>
+        <li>Employee state:-{!v.estate}</li>
+        <li>Employee street:-{!v.estreet}</li>
+        
+       </ul>
+         </p>
+    </lightning:card>
+</aura:component>

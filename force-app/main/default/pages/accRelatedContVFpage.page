@@ -1,0 +1,28 @@
+<apex:page controller="contactcls1">
+    <apex:form >
+    <apex:pageBlock >
+       <apex:pageBlockSection >
+           <apex:pageBlockSectionItem >
+           <apex:outputLabel value="Select An Account"/>
+           <apex:selectList value="{!selectedAcc}" size="1">
+               <apex:selectOptions value="{!actName}"/>
+               <apex:actionSupport event="onchange" action="{!retrieveRec}" rerender="pb" status="loadRecords"></apex:actionSupport> />
+                </apex:selectList>
+               </apex:pageBlockSectionItem>       
+        </apex:pageBlockSection> 
+        </apex:pageBlock>
+        <apex:pageBlock title="Related Contacts" id="pb">
+            <apex:actionStatus id="loadRecords">
+                <apex:facet name="start">
+                    <apex:image value="{!$Resource.Loading}" style="width:230px;height:110px;" />
+                </apex:facet>
+                <apex:facet name="stop">
+                    <apex:pageBlockTable value="{!contList}" var="contobj">
+                        <apex:column value="{!contobj.name}"/>
+                        <apex:column value="{!contobj.email}"/>
+                    </apex:pageBlockTable>               
+                </apex:facet>            
+            </apex:actionStatus>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

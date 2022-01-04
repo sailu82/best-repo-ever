@@ -1,0 +1,20 @@
+<apex:page standardController="Registration__c" extensions="loginController">
+<apex:form style="background-image: url('https://cdn.wallpapersafari.com/40/71/70gJfj.jpg');background-repeat: repeat;background-attachment: fixed;background-size: cover;border: 5px solid;border-radius: 10px;">
+<apex:pageMessage severity="error" strength="2" summary="Error:" detail="{!errorMessage}" rendered="{!errorMessage != null}"/>
+<apex:pageMessages id="shwmsg"></apex:pageMessages>
+  <h1 style="font-size=100px;">Login here </h1>
+  <apex:pageBlock >
+  <apex:pageBlockSection >      
+  <apex:outputLabel value="Username"></apex:outputLabel>
+  <apex:inputText value="{!username}" />
+  <apex:outputLabel value="Password"></apex:outputLabel> 
+  <apex:inputSecret value="{!password}" />
+      </apex:pageBlockSection>
+  <apex:pageBlockButtons location="bottom">
+  <apex:commandButton value="Login" action="{!Verifyuser}"  rerender="shwmsg"/>
+      <apex:commandButton value="Signup" action="{!Signup1}"/>
+  </apex:pageBlockButtons>
+  
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

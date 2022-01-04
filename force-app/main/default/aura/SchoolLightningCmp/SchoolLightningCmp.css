@@ -1,0 +1,59 @@
+.THIS.header {
+  background-color:Lightgreen;
+  padding: 50px;
+  
+    top:0;
+   position:sticky;
+    
+}
+.THIS.middle{
+   padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+  top:0;
+  background-image: url(https://previews.123rf.com/images/mrfiza/mrfiza1804/mrfiza180400066/99608135-close-up-arrangement-of-alphabet-on-wooden-background-preschool-education-back-to-school-and-copy-sp.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size:cover; 
+  position:sticky;
+        }
+.THIS.middle1{
+   padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+  top:0;
+  background-color:lightyellow; 
+  position:sticky;
+        }
+.THIS.footer {
+  position: absolute;
+    background-color:Lightgreen;
+    padding: 10px;
+    bottom:0;
+    position:sticky;
+    padding-top: 60px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+}
+.THIS.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.THIS {
+    background-color:lightgreen;
+    color:black;
+}
+.THIS .background{
+    color:yellow;
+}

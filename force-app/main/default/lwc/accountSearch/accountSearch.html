@@ -1,0 +1,48 @@
+<template>
+  <lightning-card title="Search Accounts" calss="slds-card_boundary">
+    <lightning-layout> 
+        <lightning-layout-item size="4"> 
+    <lightning-input type="text" label="Account Name" oncommit = "{handleNameCahnge}">
+      </lightning-input>
+    </lightning-layout-item>
+    <lightning-layout-item >
+  <lightning-button label="Get Accounts" onclick = "{handleClick}"></lightning-button>
+</lightning-layout-item>
+</lightning-layout> 
+<lightning-layout> 
+<lightning-layout-item>
+    <table>
+        <tr>
+            <td>
+                Account select 
+            </td>
+            <td>
+                Account Id
+            </td>
+            <td>
+                Account Name
+            </td>
+            
+        </tr>
+        <template for:each={accounts} for:item="acc">
+        <tr key={acc.Id}>
+            <td>
+                <lightning-input type="checkbox" name={acc.Id} onchange ={handleSelect}>
+
+                </lightning-input>
+            </td>
+            <td>
+                {acc.Id}
+                        </td>
+            <td>
+                {acc.Name}
+            </td>
+        </tr>
+    </template>
+    </table>
+</lightning-layout-item>
+</lightning-layout>
+
+  </lightning-card>
+  
+</template>
